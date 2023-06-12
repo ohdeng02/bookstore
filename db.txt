@@ -1,0 +1,114 @@
+CREATE TABLE `calender` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `title` varchar(30) NOT NULL,
+    `description` text,
+    `author_id` int(11) DEFAULT NULL,
+    PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `author` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `name` varchar(20) NOT NULL,
+    `profile` varchar(200) DEFAULT NULL,
+    PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `book` (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `name` varchar(100) NOT NULL, 
+    `publisher` varchar(100) NOT NULL,
+    `author` varchar(100) NOT NULL,
+    `stock` int NOT NULL,
+    `pubdate` varchar(8) NOT NULL,
+    `pagenum` int ,
+    `ISBN` varchar(30) NOT NULL,
+    `ebook` varchar(1) NOT NULL,
+    `kdc` varchar(20),
+    `img` varchar(30),
+    `price` int,
+    `nation` varchar(50) NOT NULL,
+    `description` varchar(200),
+    PRIMARY KEY (`id`)
+);
+
+CREATE table namecard(
+	id int NOT NULL auto_increment,
+     name VARCHAR(20) NOT NULL,
+     title varchar(20),
+     tel varchar(13), 
+     primary key(id)
+); 
+
+CREATE TABLE person (
+    loginid varchar(10) NOT NULL,
+    password varchar(20) NOT NULL, 
+    name varchar(20) NOT NULL,
+    address varchar(50),
+    tel varchar(13),
+    birth varchar(8) NOT NULL,
+    class varchar(2) NOT NULL,
+    grade varchar(2) NOT NULL,
+    PRIMARY KEY (`loginid`)
+);
+
+CREATE TABLE `cart` (
+    `cartid` int NOT NULL AUTO_INCREMENT,
+    `custid` varchar(10) NOT NULL, 
+    `bookid` int NOT NULL,
+    `cartdate` varchar(8) NOT NULL,
+    `qty` int, 
+    PRIMARY KEY (`cartid`)
+);
+
+CREATE TABLE `purchase` (
+    `purchaseid` int NOT NULL AUTO_INCREMENT,
+    `custid` varchar(10) NOT NULL, 
+    `bookid` int NOT NULL,
+    `purchasedate` varchar(8) NOT NULL,
+    `price` int,
+    `point` int,
+    `qty` int,
+    `cancel` varchar(1) NOT NULL DEFAULT 'N',
+    `refund` varchar(1) NOT NULL DEFAULT 'N',
+    PRIMARY KEY (`purchaseid`)
+);
+
+CREATE TABLE board(
+	boardid int not null auto_increment,
+    loginid varchar(10) not null,
+     password varchar(20) not null,
+     name varchar(20) not null, 
+     date varchar(8),
+     content text,
+     title varchar(200) not null,
+     primary key(boardid)
+);
+
+INSERT INTO webdb2022.namecard (id, name, title, tel) VALUES (1,'오수진','사장','01062857011');
+
+INSERT INTO webdb2022.namecard (id, name, title, tel) VALUES (2,'오수종','사원','01078886666');
+
+INSERT INTO webdb2022.book (name, publisher, author, stock, pubdate, pagenum, ISBN, ebook, kdc, img, price, nation, description) VALUES ('센과 치히로의 행방불명', '오뎅', '미야자키 하야오', 3, '20221026', 130, 'BN00013GHE89', 'N', '소설', '/images/sen.png', 13000, '대한한국','감동실화');
+
+INSERT INTO webdb2022.book (name, publisher, author, stock, pubdate, pagenum, ISBN, ebook, kdc, img, price, nation, description) VALUES ('용의자 x의 헌신', '재인', '히가시노게이고', 5, '20170830', 448, '9788990982704', 'T', '추리소설', '/images/x.jpg', 15120, '일본','추리물');
+
+INSERT INTO webdb2022.book (name, publisher, author, stock, pubdate, ebook, img, price, nation) VALUES ('누가 내 머리위에 똥쌌어?', '사계절', '베르너 홀츠바르트', 5, '20020105', 'N', '/images/ddong.jpg', 15000, '대한민국');
+
+INSERT INTO webdb2022.person (loginid, password, name, birth, class, grade) VALUES ('admin', '1234', '관리자', '020228', 'A', '1');
+
+INSERT INTO webdb2022.board (loginid, password, name, date, content, title) VALUES ('admin', '1234', '관리자', '20221109', 'ㅈㄱㄴ', '안녕하세요.');
+
+INSERT INTO webdb2022.author (id, name, profile) VALUES (2, 'egoing2', 'developer');
+
+INSERT INTO webdb2022.calender (title, description, author_id) VALUES ('01월', '1. 1.1 설날', 2);
+
+
+
+
+
+
+
+
+
+
+

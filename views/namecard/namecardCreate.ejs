@@ -1,0 +1,12 @@
+
+    <h1>직원명함 생성</h1>
+    <% if (kindOfDoc == 'C'){ %>
+    <form action="/namecard/create_process" method="post">
+    <% } else { %>
+    <form action="/namecard/update_process/<%=cId%>" method="post">
+    <% } %>
+        <p><input type="text" name="name" value="<%=name%>" style="width: 400px; border-color:antiquewhite;" placeholder="name"></p>
+        <p><input type="text" name="title" value="<%=title%>" style="width: 400px; border-color:antiquewhite;" placeholder="title"></p>
+        <p><input type="text" name="tel" value="<%=tel%>" style="width: 400px; border-color:antiquewhite;" placeholder="tel"></p>   
+        <p><input type="submit"></p>
+   </form>

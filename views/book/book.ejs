@@ -1,0 +1,31 @@
+<h1><%=kind%></h1> <!-- <%=kind%>도입 -->
+<table class="table table-sm table-bordered" style="width: 600px">
+    <%
+        var i =0;
+        while(i<results.length){
+    %>
+            <tr>
+                <% if(kind=='BookList') { %>
+                    <td class="td td-sm"><img src="<%=results[i].img%>" style="width:100px;height:100px; "></td>
+                <% } else{ %>
+                <td class="td td-sm"><img src="./<%=results[i].img%>" style="width:100px;height:100px; "></td>
+                <% } %>
+                <td><a href="/book_detail/<%=results[i].id%>"><%=results[i].name%></a></td>
+                <td><%=results[i].author%></td><td><%=results[i].price%>원</td>
+            </tr>
+    <%      <!--results[i].title변수니까 '='까지 붙임-->
+            i++;
+        }
+    %>
+</table>
+<% if(kind=='BookList') { %>
+
+<%  var j = 1;
+        while (j <= totalpages) { 
+            if(j == pageNum){ %>
+                <span style="font-weight : bold;"><%=j%></span> &nbsp;&nbsp;
+            <% } else { %>
+                <span><a href="/booklist/<%=j%>"><%=j%></a></span> &nbsp;&nbsp;
+     <%     } 
+            j++ 
+        } }%>

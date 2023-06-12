@@ -1,0 +1,27 @@
+
+<h1>장바구니</h1>
+<form>
+<table class="table table-sm table-bordered" style="width: 600px">
+    <tr><th>책이름</th><th>저자</th><th>가격</th><th>구매수량</th></tr>
+    <%
+    var i=0;
+    while(i<results.length){
+    %>
+    <form>
+        <input type="hidden" name="cartid" value="<%=results[i].cartid%>">
+        <tr>
+            <td class="td td-sm"><%=results[i].name%></td>
+            <td><%=results[i].author%></td>
+            <td><%=results[i].price%></td>
+            <!-- <td><%=results[i].qty%></td> -->
+            <td><input type="number" value="<%=results[i].qty%>" name="qty"></td>
+            <td><button type="submit" formaction = "/book/cart/update"  formmethod="post" onclick="return confirm('수량이 변경되었습니다.')">수량수정</button></td>
+        </tr>
+        </form>
+    <%
+        i++;
+    }
+    %>
+</table>
+<button type="submit" formaction = "/book/purchase_multi"  formmethod="post" >구매</button>
+</form>

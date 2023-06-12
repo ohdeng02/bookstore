@@ -1,0 +1,21 @@
+
+    <h1>책 등록</h1>
+    <% if (kindOfDoc == 'C'){ %>
+    <form action="/book/create_process" method="post">
+    <% } else { %>
+    <form action="/book/update_process/<%=bId%>" method="post">
+    <% } %>
+        <p>제목: <input type="text" name="name" value="<%=name%>" style="width: 400px; border-color:rgb(187, 186, 186);" placeholder="name"></p>
+        <p>출판사: <input type="text" name="publisher" value="<%=publisher%>" style="width: 390px; border-color:rgb(187, 186, 186);" placeholder="publisher"></p>
+        <p>저자: <input type="text" name="author" value="<%=author%>" style="width: 400px; border-color:rgb(187, 186, 186);" placeholder="author"></p>
+        <p>출판일자: <input type="text" name="pubdate" value="<%=pubdate%>" style="width: 350px; border-color:rgb(187, 186, 186);" placeholder="pubdate"></p>
+        <p>책 일렬번호: <input type="text" name="isbn" value="<%=isbn%>" style="width: 320px; border-color:rgb(187, 186, 186);" placeholder="isbn"></p>
+        <p>사진경로: <input type="text" name="img" value="<%=img%>" style="width: 350px; border-color:rgb(187, 186, 186);" placeholder="img"></p>
+        <p>
+            <span>가격: <input type="number" name="price" value="<%=price%>" style="width: 200px; border-color:rgb(187, 186, 186);" placeholder="price"></span>
+            <span>재고: <input type="number" name="stock" value="<%=stock%>" style="width: 150px; border-color:rgb(187, 186, 186);" placeholder="stock"></span>
+        </p>
+        <p>출판국가: <input type="text" name="nation" value="<%=nation%>" style="width: 350px; border-color:rgb(187, 186, 186);" placeholder="nation"></p>
+
+        <p><input type="submit"></p>
+   </form>

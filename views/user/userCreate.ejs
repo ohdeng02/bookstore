@@ -1,0 +1,21 @@
+
+    <h1>회원생성</h1>
+    <% if (kindOfDoc == 'C'){ %>
+    <form action="/user/create_process" method="post">
+    <% } else { %>
+    <form action="/user/update_process/<%=uId%>" method="post">
+    <% } %>
+        <p><input type="text" name="loginid" value="<%=loginid%>" style="width: 400px; border-color:antiquewhite;" placeholder="loginid"></p>
+        <p><input type="text" name="password" value="<%=password%>" style="width: 400px; border-color:antiquewhite;" placeholder="password"></p>
+        <p><input type="text" name="name" value="<%=name%>" style="width: 400px; border-color:antiquewhite;" placeholder="name"></p>   
+        <p>
+            <span><input type="text" name="address" value="<%=address%>" style="width: 200px; border-color:antiquewhite;" placeholder="address"></span>
+            <span><input type="text" name="tel" value="<%=tel%>" style="width: 200px; border-color:antiquewhite;" placeholder="tel"></span>
+        </p>
+        <p>
+            <span><input type="text" name="birth" value="<%=birth%>" style="width: 200px; border-color:antiquewhite;" placeholder="birth"></span>
+            <span><input type="text" name="clas" value="<%=clas%>" style="width: 100px; border-color:antiquewhite;" placeholder="clas"></span>
+            <span><input type="text" name="grade" value="<%=grade%>" style="width: 100px; border-color:antiquewhite;" placeholder="grade"></span>
+        </p>
+        <p><input type="submit"></p>
+   </form>

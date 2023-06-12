@@ -6,7 +6,7 @@
 <img src="https://github.com/ohdeng02/bookstore/assets/90545561/0d3670f1-1e67-446d-8df1-f6f6991cc783" width="45%"/>   
 
 ## 💡프로젝트 개요
-- prj-main.js파일이 메인파일
+- prj-main.js파일이 메인파일(nodemodules는 용량이커서 업로드x)
 - 웹DB 수업시간에 배운 nodejs프로젝트를 토대로 업그레이드.
 - 회원가입/로그인/비밀번호변경 기능제공
 - 장바구니 수량변경 가능, 구매취소가능, 내역조회가능
